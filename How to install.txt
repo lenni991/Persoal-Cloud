@@ -1,0 +1,27 @@
+- Download and Install Node JS and Mongo DB
+
+-https://www.mongodb.com/try/download/community
+-https://nodejs.org/en/
+
+- Start Mongo DB server
+
+- Then open command prompt in this folder and run the following command:
+    > npm update
+    > npm install
+    > npm install -g nodemon
+    > npm run dev
+
+- You have to get your ip address fist:
+    > open cmd
+    > then write ipconfig
+    > copy your ipV4 for example (192.168.1.2)
+    > open .env file from vscode 
+    > change the localhost ip with your ip
+    > save and start the server
+    > now you can access the server from any device on your local network
+
+    
+- Then open your browser and enter the following address:
+    > http://192.168.1.2:3000
+
+    

@@ -1,0 +1,94 @@
+/* Global Styles */
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+/* Header Styles */
+
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+}
+
+nav ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+nav li {
+	margin: 0 10px;
+}
+
+nav a {
+	color: #fff;
+	font-size: 18px;
+}
+
+/* Hero Section Styles */
+
+.hero {
+	background-image: url('./public/img/mti.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 500px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.hero-text {
+	text-align: center;
+}
+
+.hero-text h2 {
+	font-size: 48px;
+	margin-bottom: 20px;
+}
+
+.hero-text p {
+	font-size: 24px;
+	margin-bottom: 30px;
+}
+
+.btn-primary {
+	background-color: #fff;
+	color: #333;
+	padding: 15px 30px;
+	border-radius: 30px;
+	font-size: 18px;
+	font-weight: bold;
+	transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+	background-color: #333;
+	color: #fff;
+}
+
+/* Features Section Styles */
+
+.features {
+	background-color: #f5f5f5;
+}

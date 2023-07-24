@@ -1,0 +1,112 @@
+<%- include ("includes/header") %>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title >Welcome to your personal cloud!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
+    <style>
+        #features {
+            margin-bottom: 80px;
+        }
+        .card {
+            margin-top: 20px;
+        }
+        .card-header img {
+            max-height: 50px;
+            max-width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="homeApp">
+        <div class="container" id="features">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="main-color">Welcome to your personal cloud!</h1>
+                    <a v-bind:href="mainURL + '/MyUploads'" class="btn btn-lg btn-home mt-3">Get Started</a>
+                </div>
+            </div>
+
+            <div class="row mt-5  ">
+                <div class="col-md-4  ">
+                    <div class="card">
+                        <div class="card-header">
+                            <img v-bind:src="mainURL + '/public/img/Cloud Icons=Cloud Sync.png'" />
+                        </div>
+                        <div class="card-body">
+                            <h4>Download files</h4>
+                            <p>You can download files shared with you!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <img v-bind:src="mainURL + '/public/img/Cloud Icons=Cloud Upload.png'" />
+                        </div>
+                        <div class="card-body">
+                            <h4>Upload files</h4>
+                            <p>You can upload files.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <img v-bind:src="mainURL + '/public/img/Cloud Icons=Cloud Network.png'" />
+                        </div>
+                        <div class="card-body">
+                            <h4>Share files</h4>
+                            <p>Share files privately or publicly. Publicly shared files can be downloaded by anyone. But a privately shared file will only be downloaded by the person shared with.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 d-flex justify-content-center">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <img v-bind:src="mainURL + '/public/img/Realtime collaboration.png'" />
+                        </div>
+                        <div class="card-body">
+                            <h4>Realtime collaboration</h4>
+                            <p>When someone updates a file you shared, it will be displayed on your side in realtime. You do not have to refresh the page to see the changes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <img v-bind:src="mainURL + '/public/img/Image compression.png'" />
+                        </div>
+                        <div class="card-body">
+                            <h4>Image compression</h4>
+                            <p>You can compress your images during upload without losing the quality. So you can have more space and thus be able to upload more files.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+       
+    
+    <script>
+        const homeApp = Vue.createApp({
+            data() {
+                return {
+                    mainURL: baseUrl,
+                }
+            }
+        });
+        homeApp.mount("#homeApp");
+    </script>
+
+
+<%- include ("includes/footer") %>

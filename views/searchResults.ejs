@@ -1,0 +1,115 @@
+<%- include ("includes/header", { "title" : "PDF Search result" }) %>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <title>PDF Search App</title> -->
+    <style>
+      .resheader {
+        background-color: #007bff;
+        color: #fff;
+        padding: 20px;
+        border-radius: 16px;
+      }
+    
+      .res {
+        background-color: #c4e0ff;
+        color: #252525;
+        padding: 20px;
+        border-radius: 16px;
+      }
+    
+      .li {
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+    
+      .result-btn {
+        display: inline-block;
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+    
+      .result-btn:hover {
+        background-color: #c2dfff;
+      }
+    
+      .main {
+        margin-top: 20px;
+      }
+    
+      .ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+    <body>
+ 
+
+        <div class="container" style="margin-top: 50px;">
+            <%- include ("includes/ResponseAlert", { "request" : request }) %>
+            <header class="border-5">
+                <h1 class="resheader">Search Results for "<%= query %>"</h1>
+            </header>
+                <div class="row justify-content-center">
+                    <div class="col-md-9">
+                        <% if (matches.length> 0) { %>
+                            <div class="main">
+                              <ul class="ul">
+                                <% matches.forEach(function(match) { %>
+                                <li class="li">
+                                  <h2>
+                                    <%= match.filename %>
+                                  </h2>
+                                  <% if (match.page) { %>
+                                  <p>Found on page <a href="/openPdf?filename=<%= match.filename %>#page=<%= match.page %>">
+                                      <%= match.page %>
+                                    </a></p>
+                                  <% } %>
+                                  <p class="res"><%= match.text %></p>
+                                  <a class="result-btn" href="/openPdf?filename=<%= match.filename %>#page=<%= match.page %>">Open</a>
+                                </li>
+                                <% }); %>
+                              </ul>
+                            </div>
+                          <% } else { %>
+                            <p class="res">No matches found.</p>
+                          <% } %>
+                    </div>
+                </div>
+        </div>
+    </body>
+
+ 
+  
+  
+
+</html>
+
+<%- include ("includes/footer") %>
+
+<style>
+  /* CSS for small screens */
+  @media (max-width: 576px) {
+    .container {
+      margin-top: 30px;
+    }
+
+    .col-md-6 {
+      width: 100%;
+    }
+  }
+</style>

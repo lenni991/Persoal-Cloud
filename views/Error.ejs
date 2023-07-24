@@ -1,0 +1,35 @@
+<%- include ("includes/header", {
+   "title": "Error"
+}) %>
+
+
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<div class="container" style="margin-top: 50px; margin-bottom: 50px;">
+    <%- include ("includes/ResponseAlert", {
+        "request": request
+    }) %>
+</div>
+
+
+<%- include ("includes/footer") %>
+
+<style>
+    /* CSS for small screens */
+    @media (max-width: 576px) {
+        .container {
+            margin-top: 30px;
+        }
+
+        .col-md-6 {
+            width: 100%;
+        }
+    }
+</style>
+
+
+
+    
